@@ -1,3 +1,11 @@
+function getGridSize() {
+   let gridSize = prompt('Enter a number between 1 and 100');
+   while (gridSize < 1 || gridSize > 100) {
+    gridSize = prompt('Enter a number between 1 and 100');
+   }
+   return gridSize;
+}
+
 function genSquares(number) {
     let grit = document.querySelector('#grit');
     for (i=0; i<number; i++) {
@@ -12,7 +20,7 @@ function genSquares(number) {
     }
 }
 
-genSquares(16)
+genSquares(getGridSize())
 
 let isDrawing = false;
 const cells = document.querySelectorAll('.cell');
