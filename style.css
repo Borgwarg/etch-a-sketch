@@ -1,17 +1,22 @@
 
+#grit {
+    height: 400px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
 .row {
     display: flex;
-    justify-content: center;
+    flex-grow: 1;
 }
 
 .cell {
-    padding: 8px;
-    width: 25px;
-    height: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 10px;
     border: 1px solid black;
+    display: flex;
+    flex-grow: 1;
+
 
 }
 
