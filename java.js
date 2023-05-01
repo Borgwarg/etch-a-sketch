@@ -33,4 +33,11 @@ cells.forEach((cell) => {
     })
 })
 
+const clearButton = document.querySelector('#clear');
+clearButton.addEventListener('click', () => {  
+    cells.forEach((cell) => {
+        cell.style.backgroundColor = 'white'
+    })
+})
+
 
