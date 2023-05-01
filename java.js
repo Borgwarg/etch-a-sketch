@@ -1,6 +1,6 @@
 function getGridSize() {
    let gridSize = prompt('Enter a number between 1 and 100');
-   while (gridSize < 1 || gridSize > 100) {
+   while (gridSize < 1 || gridSize > 100 || gridSize === isNaN) {
     gridSize = prompt('Enter a number between 1 and 100');
    }
    return gridSize;
