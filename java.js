@@ -5,13 +5,12 @@ function genSquares(number) {
         row.className = 'row';
         for(let x = 1; x <= number; x++) {
             let cell = document.createElement('div') 
-            cell.className = 'gridsquare';
+            cell.className = 'cell';
             cell.innerText = (i * number) + x;
             row.appendChild(cell);
         }
         grit.appendChild(row);
     }
-    document.getElementById('code').innerText = grit.innerHTML;
 }
 
 genSquares(16)
