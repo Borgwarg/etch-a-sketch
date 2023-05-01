@@ -12,4 +12,12 @@ function genSquares(number) {
     }
 }
 
-genSquares(8)
+genSquares(16)
+
+const cells = document.querySelectorAll('.cell');
+cells.forEach((cell) => {
+    cell.addEventListener('mouseenter', (e) => {
+        cell.style.backgroundColor = 'blue'
+
+    })
+})
