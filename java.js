@@ -14,10 +14,23 @@ function genSquares(number) {
 
 genSquares(16)
 
+let isDrawing = false;
 const cells = document.querySelectorAll('.cell');
 cells.forEach((cell) => {
-    cell.addEventListener('mouseenter', (e) => {
-        cell.style.backgroundColor = 'blue'
-
+    cell.addEventListener('mousedown', (e) => {
+        isDrawing = true;
+        cell.style.backgroundColor = 'green'
+    })
+    cell.addEventListener('mousemove', (e) => {
+        if (isDrawing) {
+            cell.style.backgroundColor = 'green'
+        }
+    })
+    cell.addEventListener('mouseup', (e) => {
+        if (isDrawing) {
+            isDrawing = false;
+        }
     })
 })
+
+
