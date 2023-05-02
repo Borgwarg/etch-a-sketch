@@ -20,11 +20,6 @@ function genSquares(number) {
     }
 }
 
-genSquares(16);
-draw();
-clearButton()
-
-
 function clearGrid(elementID) {
     document.getElementById(elementID).innerHTML = '';
 } 
@@ -32,6 +27,7 @@ function clearGrid(elementID) {
 function draw() {
     let isDrawing = false;
     const cells = document.querySelectorAll('.cell');
+    const grit = document.querySelector('#grid')
     cells.forEach((cell) => {
         cell.addEventListener('mousedown', (e) => {
             isDrawing = true;
@@ -47,8 +43,17 @@ function draw() {
                 isDrawing = false;
             }
         });
+        grit.addEventListener('mouseleave', (e) => {
+            if (isDrawing) {
+                isDrawing = false;
+            }
+        })
     });
 }
+
+genSquares(16);
+draw();
+clearButton()
 
 const gridButton = document.querySelector('#gridsize');
 gridButton.addEventListener('click', () => {
