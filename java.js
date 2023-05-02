@@ -20,7 +20,24 @@ function genSquares(number) {
     }
 }
 
-genSquares(getGridSize())
+
+const clearButton = document.querySelector('#clear');
+clearButton.addEventListener('click', () => {  
+    cells.forEach((cell) => {
+        cell.style.backgroundColor = 'white'
+    })
+})
+
+function clearGrit(elementID) {
+    document.getElementById(elementID).innerHTML = '';
+}
+
+const gridButton = document.querySelector('#gridsize');
+gridButton.addEventListener('click', () => {
+    clearGrit('grit')
+    genSquares(getGridSize())
+});
+
 
 let isDrawing = false;
 const cells = document.querySelectorAll('.cell');
@@ -40,12 +57,3 @@ cells.forEach((cell) => {
         }
     })
 })
-
-const clearButton = document.querySelector('#clear');
-clearButton.addEventListener('click', () => {  
-    cells.forEach((cell) => {
-        cell.style.backgroundColor = 'white'
-    })
-})
-
-
