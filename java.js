@@ -1,13 +1,13 @@
 function getGridSize() {
-   let gridSize = prompt('Enter a number between 1 and 100');
-   while (gridSize < 1 || gridSize > 100 || gridSize === isNaN) {
-    gridSize = prompt('Enter a number between 1 and 100');
+   let gridSize = prompt('Enter a number between 1 and 100 (for example: 100 generates a grit of 100 x 100 squares)');
+   while (gridSize < 1 || gridSize > 100 || isNaN(gridSize)) {
+    gridSize = prompt('Enter a number between 1 and 100 (for example: 100 generates a grit of 100 x 100 squares)s');
    }
    return gridSize;
 }
 
 function genSquares(number) {
-    let grit = document.querySelector('#grit');
+    let grid = document.querySelector('#grid');
     for (i=0; i<number; i++) {
         let row = document.createElement('div');
         row.className = 'row';
@@ -16,34 +16,16 @@ function genSquares(number) {
             cell.className = 'cell';
             row.appendChild(cell);
         }
-        grit.appendChild(row);
+        grid.appendChild(row);
     }
 }
 
-function draw() {
-    let isDrawing = false;
-    const cells = document.querySelectorAll('.cell');
-    cells.forEach((cell) => {
-        cell.addEventListener('mousedown', (e) => {
-            isDrawing = true;
-            cell.style.backgroundColor = 'green'
-        })
-        cell.addEventListener('mousemove', (e) => {
-            if (isDrawing) {
-                cell.style.backgroundColor = 'green'
-            }
-        })
-        cell.addEventListener('mouseup', (e) => {
-            if (isDrawing) {
-                isDrawing = false;
-            }
-        })
-    })
-}
+genSquares(16);
+draw();
+clearButton()
 
 
-
-function clearGrit(elementID) {
+function clearGrid(elementID) {
     document.getElementById(elementID).innerHTML = '';
 } 
 
@@ -53,11 +35,11 @@ function draw() {
     cells.forEach((cell) => {
         cell.addEventListener('mousedown', (e) => {
             isDrawing = true;
-            cell.style.backgroundColor = 'green'
+            cell.style.backgroundColor = 'gold'
         });
         cell.addEventListener('mousemove', (e) => {
             if (isDrawing) {
-                cell.style.backgroundColor = 'green'
+                cell.style.backgroundColor = 'gold'
             }
         });
         cell.addEventListener('mouseup', (e) => {
@@ -70,7 +52,7 @@ function draw() {
 
 const gridButton = document.querySelector('#gridsize');
 gridButton.addEventListener('click', () => {
-    clearGrit('grit');
+    clearGrid('grid');
     genSquares(getGridSize());
     draw();
     clearButton();
