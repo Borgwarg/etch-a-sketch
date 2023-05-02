@@ -20,40 +20,74 @@ function genSquares(number) {
     }
 }
 
-
-const clearButton = document.querySelector('#clear');
-clearButton.addEventListener('click', () => {  
+function draw() {
+    let isDrawing = false;
+    const cells = document.querySelectorAll('.cell');
     cells.forEach((cell) => {
-        cell.style.backgroundColor = 'white'
+        cell.addEventListener('mousedown', (e) => {
+            isDrawing = true;
+            cell.style.backgroundColor = 'green'
+        })
+        cell.addEventListener('mousemove', (e) => {
+            if (isDrawing) {
+                cell.style.backgroundColor = 'green'
+            }
+        })
+        cell.addEventListener('mouseup', (e) => {
+            if (isDrawing) {
+                isDrawing = false;
+            }
+        })
     })
-})
+}
+
+draw();
+
 
 function clearGrit(elementID) {
     document.getElementById(elementID).innerHTML = '';
+} 
+
+function draw() {
+    let isDrawing = false;
+    const cells = document.querySelectorAll('.cell');
+    cells.forEach((cell) => {
+        cell.addEventListener('mousedown', (e) => {
+            isDrawing = true;
+            cell.style.backgroundColor = 'green'
+        });
+        cell.addEventListener('mousemove', (e) => {
+            if (isDrawing) {
+                cell.style.backgroundColor = 'green'
+            }
+        });
+        cell.addEventListener('mouseup', (e) => {
+            if (isDrawing) {
+                isDrawing = false;
+            }
+        });
+    });
 }
 
 const gridButton = document.querySelector('#gridsize');
 gridButton.addEventListener('click', () => {
-    clearGrit('grit')
-    genSquares(getGridSize())
+    clearGrit('grit');
+    genSquares(getGridSize());
+    draw();
+    clearButton();
 });
 
+function clearButton() {
+    const clearButton = document.querySelector('#clear');
+    const cells = document.querySelectorAll('.cell');
+    clearButton.addEventListener('click', () => {  
+        cells.forEach((cell) => {
+            cell.style.backgroundColor = 'white'
+        });
+    });
+}
 
-let isDrawing = false;
-const cells = document.querySelectorAll('.cell');
-cells.forEach((cell) => {
-    cell.addEventListener('mousedown', (e) => {
-        isDrawing = true;
-        cell.style.backgroundColor = 'green'
-    })
-    cell.addEventListener('mousemove', (e) => {
-        if (isDrawing) {
-            cell.style.backgroundColor = 'green'
-        }
-    })
-    cell.addEventListener('mouseup', (e) => {
-        if (isDrawing) {
-            isDrawing = false;
-        }
-    })
-})
+
+
+
+
