@@ -18,10 +18,21 @@ body {
     margin: 8px;
     font-weight: bold;
     color: rgb(238, 4, 4);
+    background-color: rgb(183, 183, 183);
+    border-radius: 7%;
+    border-style: none;
+    border-color: rgba(116, 116, 116, 0.765);
+    cursor: pointer;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s; 
+}
+
+.buttons button:hover {
+    background-color: grey;
 }
 #grit {
     margin: 16px;
-    background-color: white;
+    background-color: rgb(232, 232, 232);
     height: 400px;
     width: 400px;
     display: flex;
@@ -34,10 +45,9 @@ body {
 }
 
 .cell {
-    
     display: flex;
     flex-grow: 1;
-    border: 1px solid black;
+    border: none;
 
 
 
@@ -47,5 +57,3 @@ body {
     margin-top: -1px;
     margin-left: -1px;
 }
-
-

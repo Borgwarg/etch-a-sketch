@@ -41,7 +41,6 @@ function draw() {
     })
 }
 
-draw();
 
 
 function clearGrit(elementID) {
@@ -82,7 +81,7 @@ function clearButton() {
     const cells = document.querySelectorAll('.cell');
     clearButton.addEventListener('click', () => {  
         cells.forEach((cell) => {
-            cell.style.backgroundColor = 'white'
+            cell.style.backgroundColor = 'rgb(232, 232, 232)'
         });
     });
 }
