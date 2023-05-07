@@ -77,7 +77,7 @@ function clearButton() {
 
 function rainbowMode() {
     const body = document.querySelector('body');
-    body.classList.add('');
+    body.classList.toggle('rainbow');
 }
 
 function rainbowButton () {
