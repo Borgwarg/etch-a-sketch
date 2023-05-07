@@ -20,48 +20,54 @@ function genSquares(number) {
     }
 }
 
-genSquares(16);
-
-const cells = document.querySelectorAll('.cell');
-const grid = document.querySelector('#grid')
-
 function clearGrid(elementID) {
     document.getElementById(elementID).innerHTML ='';
 }
 
 const gridButton = document.querySelector('#gridsize');
 gridButton.addEventListener('click', () => {
-    clearGrid();
+    clearGrid('grid');
     genSquares(getGridSize());
-})
+    draw();
+});
 
 const clearButton = document.querySelector('#clear');
 clearButton.addEventListener('click', () => {
+    const cells = document.querySelectorAll('.cell');
     cells.forEach((cell) => {
-        cell.style.backgroundColor = 'rgb(232, 232, 232)'
+        cell.style.backgroundColor = 'rgb(232, 232, 232)';
     })
+    console.log('ye');
 });
 
-let isDrawing = false;
-cells.forEach((cell) => {
-    cell.addEventListener('mousedown', (e) => {
-        isDrawing = true;
-        cell.style.backgroundColor = 'gold'   
-        console.log('down');
+function draw() {
+    let isDrawing = false;
+    const cells = document.querySelectorAll('.cell');
+    const grid = document.querySelector('#grid');
+    cells.forEach((cell) => {
+        cell.addEventListener('mousedown', (e) => {
+            isDrawing = true;
+            cell.style.backgroundColor = 'gold'   
+            console.log('down');
+        });
+        cell.addEventListener('mousemove', (e) => {
+            if (isDrawing) {
+                cell.style.backgroundColor = 'gold'
+            }
+        });
+        cell.addEventListener('mouseup', (e) => {
+            if (isDrawing) {
+                isDrawing = false;
+            }
+        });
+        grid.addEventListener('mouseleave', (e) => {
+            if (isDrawing) {
+                isDrawing = false;
+            }
+        })
     });
-    cell.addEventListener('mousemove', (e) => {
-        if (isDrawing) {
-            cell.style.backgroundColor = 'gold'
-        }
-    });
-    cell.addEventListener('mouseup', (e) => {
-        if (isDrawing) {
-            isDrawing = false;
-        }
-    });
-    grid.addEventListener('mouseleave', (e) => {
-        if (isDrawing) {
-            isDrawing = false;
-        }
-    })
-});
+}
+
+
+genSquares(16);
+draw();
