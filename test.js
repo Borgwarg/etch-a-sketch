@@ -22,9 +22,27 @@ function genSquares(number) {
 
 genSquares(16);
 
-let isDrawing = false;
 const cells = document.querySelectorAll('.cell');
 const grid = document.querySelector('#grid')
+
+function clearGrid(elementID) {
+    document.getElementById(elementID).innerHTML ='';
+}
+
+const gridButton = document.querySelector('#gridsize');
+gridButton.addEventListener('click', () => {
+    clearGrid();
+    genSquares(getGridSize());
+})
+
+const clearButton = document.querySelector('#clear');
+clearButton.addEventListener('click', () => {
+    cells.forEach((cell) => {
+        cell.style.backgroundColor = 'rgb(232, 232, 232)'
+    })
+});
+
+let isDrawing = false;
 cells.forEach((cell) => {
     cell.addEventListener('mousedown', (e) => {
         isDrawing = true;
