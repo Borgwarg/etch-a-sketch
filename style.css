@@ -86,4 +86,7 @@ h1 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    
 }
