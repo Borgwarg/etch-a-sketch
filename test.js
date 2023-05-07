@@ -20,6 +20,13 @@ function genSquares(number) {
     }
 }
 
+function rainbowMode() {
+    const body = document.querySelector('body');
+    const title = document.querySelector('h1');
+    body.classList.toggle('rainbow');
+    title.classList.toggle('gradient');
+}
+
 function clearGrid(elementID) {
     document.getElementById(elementID).innerHTML ='';
 }
@@ -38,6 +45,11 @@ clearButton.addEventListener('click', () => {
         cell.style.backgroundColor = 'rgb(232, 232, 232)';
     })
     console.log('ye');
+});
+
+const rainbowButton = document.querySelector('#rainbow');
+rainbowButton.addEventListener('click', () => {
+    rainbowMode();
 });
 
 function draw() {
