@@ -77,7 +77,9 @@ function clearButton() {
 
 function rainbowMode() {
     const body = document.querySelector('body');
+    const title = document.querySelector('h1');
     body.classList.toggle('rainbow');
+    title.classList.toggle('gradient');
 }
 
 function rainbowButton () {

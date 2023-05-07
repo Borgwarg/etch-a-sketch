@@ -78,3 +78,12 @@ h1 {
     80%  { background: #2bced7; }
     100% { background: blueviolet; }
 }
+
+.gradient {
+    font-size: 50px;
+    background: linear-gradient(to right, red 0%, orange 20%, yellow 40%, green 60%, blue 80%, purple 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
