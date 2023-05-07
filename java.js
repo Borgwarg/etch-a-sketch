@@ -86,6 +86,5 @@ function rainbowButton () {
     const rainbowButton = document.querySelector('#rainbow');
     rainbowButton.addEventListener('click', () => {
         rainbowMode();
-        console.log('ye');
     });
 }
