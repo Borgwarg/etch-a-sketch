@@ -54,6 +54,7 @@ function draw() {
 genSquares(16);
 draw();
 clearButton()
+rainbowButton();
 
 const gridButton = document.querySelector('#gridsize');
 gridButton.addEventListener('click', () => {
@@ -61,6 +62,7 @@ gridButton.addEventListener('click', () => {
     genSquares(getGridSize());
     draw();
     clearButton();
+    rainbowButton();
 });
 
 function clearButton() {
@@ -73,7 +75,15 @@ function clearButton() {
     });
 }
 
+function rainbowMode() {
+    const body = document.querySelector('body');
+    body.classList.add('');
+}
 
-
-
-
+function rainbowButton () {
+    const rainbowButton = document.querySelector('#rainbow');
+    rainbowButton.addEventListener('click', () => {
+        rainbowMode();
+        console.log('ye');
+    });
+}
