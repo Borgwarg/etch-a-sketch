@@ -88,3 +88,7 @@ h1 {
     -webkit-transition: all 1s ease-in-out;
     transition: all 1s ease-in-out;   
 }
+
+.gold {
+    background-color: gold;
+}
