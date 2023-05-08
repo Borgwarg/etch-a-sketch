@@ -1,3 +1,9 @@
+const divEL = document.querySelector('div');
+divEL.addEventListener('dragstart', (e) => {
+    e.preventDefault();
+})
+
+
 function getGridSize() {
     let gridSize = prompt('Enter a number between 1 and 100 (for example: 100 generates a grit of 100 x 100 squares)');
     while (gridSize < 1 || gridSize > 100 || isNaN(gridSize)) {
