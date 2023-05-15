@@ -18,7 +18,7 @@ function genSquares(number) {
         let row = document.createElement('div');
         row.className = 'row';
         for(let x = 1; x <= number; x++) {
-            let cell = document.createElement('div') 
+            let cell = document.createElement('div'); 
             cell.className = 'cell';
             row.appendChild(cell);
         }
@@ -99,7 +99,7 @@ function draw() {
 }
 
 function randomColor() {
-    return('#' + Math.floor(Math.random()*16777215).toString(16))
+    return('#' + Math.floor(Math.random()*16777215).toString(16));
 }
  
 genSquares(16);
